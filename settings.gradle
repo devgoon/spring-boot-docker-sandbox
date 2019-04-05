@@ -1,0 +1,9 @@
+rootProject.name = 'spring-boot-docker-sandbox'
+
+include 'game-list-server'
+
+rootProject.children.each {
+    it.buildFileName = it.name + '.gradle'
+    logger.info( "Included Gradle subproject : " + it.buildFileName )
+}
+
