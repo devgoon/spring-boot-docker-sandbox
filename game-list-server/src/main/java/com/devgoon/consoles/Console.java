@@ -1,9 +1,10 @@
+
+
 package com.devgoon.consoles;
 
+import java.util.List;
 
 import com.devgoon.games.Game;
-
-import java.util.List;
 
 
 /**
@@ -13,13 +14,13 @@ import java.util.List;
 public interface Console
 {
     /**
-     * TODO: Method description
+     * Get the console name
      * @return
      */
     String getConsoleName();
 
     /**
-     * TODO: Method description
+     * Get the games for a given console
      * @return
      */
     List<Game> getGames();

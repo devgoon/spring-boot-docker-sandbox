@@ -1,77 +1,73 @@
-/*
- * Copyright (c) 2019 Thermo Fisher Scientific
- * All rights reserved.
- */
 
 
 package com.devgoon;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
-import com.devgoon.consoles.ConsoleFactory;
+import com.devgoon.consolesr    .ConsoleFactory;
 import com.devgoon.consoles.ConsoleType;
 import com.devgoon.games.Game;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.SpringApplication;
-import org.springframework.context.event.ContextRefreshedEvent;
-import org.springframework.context.event.EventListener;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
 /**
- * TODO: Class description
+ * Main SpringBoot application
  */
 @SpringBootApplication
+@EnableCaching
 @RestController
 public class Application
 {
-    /**
-     * TODO: Method description
-     * @param event
-     */
-    @EventListener
-    public void onApplicationEvent(ContextRefreshedEvent event)
-    {
-
-    }
+    @Autowired
+    private GameListService gameListService;
 
     /**
-     * TODO: Method description
+     * Get all the games
      *
      * @return
      */
-    @RequestMapping("/turbograpx")
-    public List<Game> turbograpx()
+    @RequestMapping("turbograpx/games")
+    public List<Game> getall()
     {
-        return new ConsoleFactory().getConsole(ConsoleType.TURBOGRAPX).getGames();
+        return gameListService.getAll(ConsoleType.TURBOGRAPX);
     }
 
     /**
-     * TODO: Method description
+     * Get all the games that contain the title
      *
+     * @param title
      * @return
      */
-    @RequestMapping("/sega")
-    public List<Game> sega()
+    @RequestMapping("/turbograpx/games/{title}")
+    public List<Game> findByTitle(@PathVariable String title)
     {
-        return new ConsoleFactory().getConsole(ConsoleType.SEGA).getGames();
+        return gameListService.findByTitle(ConsoleType.TURBOGRAPX, title);
     }
 
     /**
-     * TODO: Method description
+     * Get all the games that are of a given genre
      *
+     * @param genre
      * @return
      */
-    @RequestMapping("/nes")
-    public List<Game> nes()
+    @RequestMapping("/turbograpx/games/genre/{genre}")
+    public List<Game> findByGenre(@PathVariable String genre)
     {
-        return new ConsoleFactory().getConsole(ConsoleType.NES).getGames();
+        return gameListService.findByGenre(ConsoleType.TURBOGRAPX, genre);
     }
+
     /**
-     * TODO: Method description
+     * Main
      *
      * @param args
      */
@@ -80,7 +76,49 @@ public class Application
         SpringApplication.run(Application.class, args);
     }
 
+    /**
+     * Game List Service implementation
+     */
+    @Component
+    public class GameListService
+    {
+        /**
+         * TODO: Method description
+         * @param consoleType
+         * @param title
+         * @return
+         */
+        @Cacheable("games")
+        public List<Game> findByTitle(ConsoleType consoleType, String title)
+        {
+            return new ConsoleFactory().getConsole(consoleType).getGames().stream().filter(game -> game.getName().contains(title)).collect(Collectors.toList());
 
+        }
 
+        /**
+         * TODO: Method description
+         * @param consoleType
+         * @param genre
+         * @return
+         */
+        @Cacheable("games")
+        public List<Game> findByGenre(ConsoleType consoleType, String genre)
+        {
+            return new ConsoleFactory().getConsole(consoleType).getGames().stream().filter(game -> game.getGenre().equalsIgnoreCase(genre)).collect(Collectors.toList());
+
+        }
+
+        /**
+         * TODO: Method description
+         * @param consoleType
+         * @return
+         */
+        @Cacheable("games")
+        public List<Game> getAll(ConsoleType consoleType)
+        {
+            return new ConsoleFactory().getConsole(consoleType).getGames();
+        }
+
+    }
 }
 

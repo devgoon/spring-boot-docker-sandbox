@@ -1,21 +1,18 @@
-/*
- * Copyright (c) 2019 Thermo Fisher Scientific
- * All rights reserved.
- */
 
 
 package com.devgoon.consoles;
 
-import com.devgoon.games.Game;
-import com.devgoon.games.GamesUtil;
-
 import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.List;
 
+import com.devgoon.games.Game;
+import com.devgoon.games.GamesUtil;
+
 
 /**
- * TODO: Class description
+ * Turbograpx implementation of the Console interface
  */
 public class TurboGrapx implements Console
 {

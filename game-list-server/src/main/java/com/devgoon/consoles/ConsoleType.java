@@ -1,7 +1,9 @@
+
+
 package com.devgoon.consoles;
 
 /**
- * TODO: Enum description
+ * An enumeration of consoles
  *
  */
 public enum ConsoleType

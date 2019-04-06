@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2019 Thermo Fisher Scientific
- * All rights reserved.
- */
 
 
 package com.devgoon.games;
@@ -18,12 +14,12 @@ import com.devgoon.consoles.ConsoleType;
 
 
 /**
- * TODO: Class description
+ * Utility that loads games from a file
  */
 public class GamesUtil
 {
     /**
-     * TODO: Method description
+     * Load games given a console type
      * @param consoleType
      * @return
      * @throws IOException
@@ -42,7 +38,7 @@ public class GamesUtil
             while ((game = reader.readLine()) != null)
             {
                 String name = game.split(",")[0].trim();
-                String genre = game.split(",")[game.split(",").length-1].toUpperCase().trim();
+                String genre = game.split(",")[game.split(",").length - 1].toUpperCase().trim();
 
                 result.add(makeGame(name, genre));
             }

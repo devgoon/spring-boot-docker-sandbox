@@ -1,15 +1,25 @@
 
+
 package com.devgoon.games;
+
+import java.io.Serializable;
+
 
 /**
  * Represents a game
  */
-public class Game
+public class Game implements Serializable
 {
     private String name;
     private String genre;
 
-    public Game(){}
+    /**
+     * TODO: Constructs ...
+     */
+    public Game()
+    {
+    }
+
     /**
      * Constructor
      *

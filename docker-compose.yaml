@@ -1,0 +1,12 @@
+version: '3'
+services:
+  memcached:
+    image: memcached:alpine
+    ports:
+      - 11211:11211
+  spring-boot-docker-sandbox:
+    image: devgoon/spring-boot-docker
+    depends_on:
+      - memcached
+    ports:
+      - 8080:8080

@@ -1,7 +1,9 @@
+
+
 package com.devgoon.consoles;
 
 /**
- * TODO: Class description
+ * Factory pattern for loading consoles
  */
 public class ConsoleFactory
 {
