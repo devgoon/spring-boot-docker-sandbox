@@ -5,7 +5,7 @@ package com.devgoon;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.devgoon.consolesr    .ConsoleFactory;
+import com.devgoon.consoles.ConsoleFactory;
 import com.devgoon.consoles.ConsoleType;
 import com.devgoon.games.Game;
 
