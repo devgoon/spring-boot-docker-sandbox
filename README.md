@@ -23,7 +23,7 @@ Here are the notatable dependencies included with this Gradle build
 * Java
 * SpringBoot
 * Docker
-* Memcache
+* Memcached
 
 ### Contributors ###
 * Vico Minnocci
