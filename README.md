@@ -10,7 +10,7 @@ Not meant to be a comprehensive, but a wide demonstration of commonly used frame
 * Run: `gradlew build`
 
 ## Usage
-Running Docker ontainers
+Running Docker containers
 ```
 ./gradlew docker
 docker-compose up
