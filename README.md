@@ -10,12 +10,10 @@ Not meant to be a comprehensive, but a wide demonstration of commonly used frame
 * Run: `gradlew build`
 
 ## Usage
-See tests for examples
-
-Running as a Docker Container
+Running Docker ontainers
 ```
 ./gradlew docker
-docker run -p <PORT>:8080 devgoon/spring-boot-docker
+docker-compose up
 ```
 
 ## Deployment
@@ -25,6 +23,7 @@ Here are the notatable dependencies included with this Gradle build
 * Java
 * SpringBoot
 * Docker
+* Memcache
 
 ### Contributors ###
 * Vico Minnocci
