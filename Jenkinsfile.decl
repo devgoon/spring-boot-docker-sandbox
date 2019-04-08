@@ -1,9 +1,6 @@
-// See https://corelims.atlassian.net/wiki/x/joDOGg for details on usage
-@Library('common-jenkins-declarative@2.x.x') _
 pipeline {
-    agent {
-        node { label 'agent' }
-    }
+    agent any
+
     stages {
         stage('Build') {
             steps {
