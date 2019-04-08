@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                gradleTask('build', false, '--no-parallel')
+                ./gradlew build
             }
         }
         stage('Test') {
             steps {
-                gradleTask('test', false, '--no-parallel')
+                ./gradlew test
             }
         }
     }
