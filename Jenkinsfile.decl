@@ -1,0 +1,19 @@
+// See https://corelims.atlassian.net/wiki/x/joDOGg for details on usage
+@Library('common-jenkins-declarative@2.x.x') _
+pipeline {
+    agent {
+        node { label 'agent' }
+    }
+    stages {
+        stage('Build') {
+            steps {
+                gradleTask('build', false, '--no-parallel')
+            }
+        }
+        stage('Test') {
+            steps {
+                gradleTask('test', false, '--no-parallel')
+            }
+        }
+    }
+}

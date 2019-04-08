@@ -55,7 +55,3 @@ dockerCompose {
 }
 dockerCompose.isRequiredBy(test)
 
-test {
-    exclude '**/TestGameListServer.class'
-}
-
