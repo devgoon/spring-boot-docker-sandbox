@@ -50,7 +50,7 @@ dependencies {
 }
 
 dockerCompose {
-    useComposeFiles = ['../docker-compose.yaml']
+    useComposeFiles = ['docker-compose.yaml']
     waitForTcpPorts = true
 }
 dockerCompose.isRequiredBy(test)
