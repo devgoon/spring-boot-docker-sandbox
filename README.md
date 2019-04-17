@@ -12,9 +12,10 @@ Not meant to be a comprehensive, but a wide demonstration of commonly used frame
 ## Usage
 Running Docker containers
 ```
-./gradlew docker
-docker-compose up
+./gradlew composeUp
+From browser -> http://localhost:8080/turbografx/games
 ```
+
 
 ## Deployment
 
