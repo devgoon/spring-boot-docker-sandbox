@@ -4,6 +4,7 @@ package com.devgoon.consoles;
 
 import java.io.IOException;
 
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +33,7 @@ public class NES implements Console
         {
             result = new GamesUtil().loadGames(ConsoleType.NES);
         }
-        catch (IOException e)
+        catch (IOException | URISyntaxException e)
         {
             e.printStackTrace();
         }

@@ -8,14 +8,15 @@ package com.devgoon.consoles;
  */
 public enum ConsoleType
 {
-    TURBOGRAPX("TURBOGRAPX 16", "tg16-game-list.csv"), SEGA("SEGA MASTER SYSTEM", "sega-game-list.csv"), NES("NINTENDO", "nes-game-list.csv");
+    TURBOGRAPX("TURBOGRAPX 16", "roms/tg16/game-list.csv", "roms/tg16"), SEGA("SEGA MASTER SYSTEM", "roms/sega/game-list.csv", "roms/sega:"), NES("NINTENDO", "roms/nes/game-list.csv", "roms/nes");
 
     private String consoleName;
     private String gameList;
+    private String romsDirectory;
 
 
     /**
-     * TODO: Method description
+     * Get the game list file name
      * @return
      */
     public String getGameList()
@@ -25,7 +26,7 @@ public enum ConsoleType
 
 
     /**
-     * TODO: Method description
+     * Get console name
      * @return
      */
     public String getConsoleName()
@@ -33,10 +34,20 @@ public enum ConsoleType
         return consoleName;
     }
 
-    private ConsoleType(String consoleName, String gameList)
+    /**
+     * Get rom directory
+     * @return
+     */
+    public String getRomsDirectory()
+    {
+        return romsDirectory;
+    }
+
+    private ConsoleType(String consoleName, String gameList, String romsDirectory)
     {
         this.consoleName = consoleName;
         this.gameList = gameList;
+        this.romsDirectory = romsDirectory;
     }
 }
 

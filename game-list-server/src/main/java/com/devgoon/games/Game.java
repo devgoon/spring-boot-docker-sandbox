@@ -12,11 +12,12 @@ public class Game implements Serializable
 {
     private String name;
     private String genre;
+    private byte[] rom;
 
     /**
-     * TODO: Constructs ...
+     * Constructs
      */
-    public Game()
+    private Game()
     {
     }
 
@@ -25,11 +26,13 @@ public class Game implements Serializable
      *
      * @param name
      * @param genre
+     * @param rom
      */
-    public Game(String name, String genre)
+    public Game(String name, String genre, byte[] rom)
     {
         this.name = name;
         this.genre = genre;
+        this.rom = rom;
     }
 
 
@@ -51,10 +54,34 @@ public class Game implements Serializable
         return genre;
     }
 
+    /**
+     * Get id
+     * @return
+     */
+    public int getId()
+    {
+        return hashCode();
+    }
+
     @Override
     public String toString()
     {
-        return String.format("%s %s", this.name, this.genre);
+        return String.format("%s %s %s", this.name, this.genre, hashCode());
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Math.abs(this.genre.hashCode() + this.name.hashCode() + this.rom.hashCode());
+    }
+
+    /**
+     * Get the rom
+     * @return
+     */
+    public byte[] getRom()
+    {
+        return rom;
     }
 }
 

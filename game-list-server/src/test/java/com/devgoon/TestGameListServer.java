@@ -36,7 +36,7 @@ public class TestGameListServer
 
         Assert.notEmpty(games, "Should not be empty.");
 
-        games.stream().forEach(System.out::println);
+       games.stream().forEach(System.out::println);
 
     }
     /**
@@ -88,9 +88,7 @@ public class TestGameListServer
 
         Assert.notEmpty(games, "Should not be empty.");
 
-        Assert.isTrue(games.get(0).getName().equals("Cosmic Fantasy 2"),"First title should be Cosmic Fantasy 2.");
-
-        Assert.isTrue(games.get(games.size()-1).getName().equals("Ys: Book I & II"),"Last title should be Ys: Book I & II.");
+        Assert.isTrue(games.get(0).getName().equals("Double Dungeons"),"First title should be Double Dungeons.");
 
     }
 

@@ -52,10 +52,10 @@ dependencies {
 dockerCompose {
     useComposeFiles = ['./docker-compose.yaml']
     waitForTcpPorts = true
+    dependsOn dockerClean, docker
 }
 dockerCompose.isRequiredBy(test)
 
 test {
     finalizedBy composeDown
 }
-

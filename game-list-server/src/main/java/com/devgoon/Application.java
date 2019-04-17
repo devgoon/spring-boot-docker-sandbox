@@ -83,7 +83,7 @@ public class Application
     public class GameListService
     {
         /**
-         * TODO: Method description
+         * Find by title
          * @param consoleType
          * @param title
          * @return
@@ -96,7 +96,7 @@ public class Application
         }
 
         /**
-         * TODO: Method description
+         * Find game by Console Type and genre
          * @param consoleType
          * @param genre
          * @return
@@ -109,7 +109,7 @@ public class Application
         }
 
         /**
-         * TODO: Method description
+         * Get all the games by ConsoleType
          * @param consoleType
          * @return
          */

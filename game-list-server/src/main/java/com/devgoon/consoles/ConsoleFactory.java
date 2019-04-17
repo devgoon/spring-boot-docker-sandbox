@@ -8,7 +8,7 @@ package com.devgoon.consoles;
 public class ConsoleFactory
 {
     /**
-     * TODO: Method description
+     * Console Factory
      * @param consoleType
      * @return
      */
@@ -26,7 +26,7 @@ public class ConsoleFactory
                 return new NES();
 
             default:
-                throw new UnsupportedOperationException("Unknown Console.");
+                throw new UnsupportedOperationException("Unknown console.");
         }
     }
 }
