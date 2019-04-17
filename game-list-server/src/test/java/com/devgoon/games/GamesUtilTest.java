@@ -27,7 +27,7 @@ public class GamesUtilTest
     public void loadGames() throws IOException, URISyntaxException
     {
         GamesUtil gamesUtil = new GamesUtil();
-        List<Game> result = gamesUtil.loadGames(ConsoleType.TURBOGRAPX);
+        List<Game> result = gamesUtil.loadGames(ConsoleType.TURBOGRAFX);
 
         result.stream().forEach(System.out::println);
         assertTrue (result.size()>0);

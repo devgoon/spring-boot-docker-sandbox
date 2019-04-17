@@ -36,10 +36,10 @@ public class Application
      *
      * @return
      */
-    @RequestMapping("turbograpx/games")
+    @RequestMapping("/turbografx/games")
     public List<Game> getall()
     {
-        return gameListService.getAll(ConsoleType.TURBOGRAPX);
+        return gameListService.getAll(ConsoleType.TURBOGRAFX);
     }
 
     /**
@@ -48,10 +48,10 @@ public class Application
      * @param title
      * @return
      */
-    @RequestMapping("/turbograpx/games/{title}")
+    @RequestMapping("/turbografx/games/{title}")
     public List<Game> findByTitle(@PathVariable String title)
     {
-        return gameListService.findByTitle(ConsoleType.TURBOGRAPX, title);
+        return gameListService.findByTitle(ConsoleType.TURBOGRAFX, title);
     }
 
     /**
@@ -60,10 +60,10 @@ public class Application
      * @param genre
      * @return
      */
-    @RequestMapping("/turbograpx/games/genre/{genre}")
+    @RequestMapping("/turbografx/games/genre/{genre}")
     public List<Game> findByGenre(@PathVariable String genre)
     {
-        return gameListService.findByGenre(ConsoleType.TURBOGRAPX, genre);
+        return gameListService.findByGenre(ConsoleType.TURBOGRAFX, genre);
     }
 
     /**

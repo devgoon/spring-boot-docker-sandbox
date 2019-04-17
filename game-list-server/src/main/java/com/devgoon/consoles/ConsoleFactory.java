@@ -16,8 +16,8 @@ public class ConsoleFactory
     {
         switch (consoleType)
         {
-            case TURBOGRAPX:
-                return new TurboGrapx();
+            case TURBOGRAFX:
+                return new TurboGrafx();
 
             case SEGA:
                 return new SegaMasterSystem();

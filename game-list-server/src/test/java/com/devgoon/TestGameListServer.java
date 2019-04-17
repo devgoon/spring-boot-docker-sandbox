@@ -22,12 +22,12 @@ import org.springframework.web.util.UriComponentsBuilder;
 public class TestGameListServer
 {
     /**
-     * Get all the Turbograpx Games
+     * Get all the TurboGrafx Games
      */
     @Test
-    public void testTurboGrapxGamesAll()
+    public void testTurboGrafxGamesAll()
     {
-        final String url = "http://localhost:8080/turbograpx/games";
+        final String url = "http://localhost:8080/turbografx/games";
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<List<Game>> response = restTemplate
@@ -40,12 +40,12 @@ public class TestGameListServer
 
     }
     /**
-     * Find the Turbograpx game by title
+     * Find the TurboGrafx game by title
      */
     @Test
-    public void testTurboGrapxGamesFindByTitle()
+    public void testTurboGrafxGamesFindByTitle()
     {
-        final String url = "http://localhost:8080/turbograpx/games/{title}";
+        final String url = "http://localhost:8080/turbografx/games/{title}";
 
         Map<String, String> uriParams = new HashMap<>();
         uriParams.put("title", "Bonk");
@@ -67,12 +67,12 @@ public class TestGameListServer
 
     }
     /**
-     * Find the turbograpx games by genre
+     * Find the turboGrafx games by genre
      */
     @Test
-    public void testTurboGrapxGamesFindByGenre()
+    public void testTurboGrafxGamesFindByGenre()
     {
-        final String url = "http://localhost:8080/turbograpx/games/genre/{genre}";
+        final String url = "http://localhost:8080/turbografx/games/genre/{genre}";
 
         Map<String, String> uriParams = new HashMap<>();
         uriParams.put("genre", "RPG");

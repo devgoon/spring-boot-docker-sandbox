@@ -8,7 +8,7 @@ package com.devgoon.consoles;
  */
 public enum ConsoleType
 {
-    TURBOGRAPX("TURBOGRAPX 16", "roms/tg16/game-list.csv", "roms/tg16"), SEGA("SEGA MASTER SYSTEM", "roms/sega/game-list.csv", "roms/sega:"), NES("NINTENDO", "roms/nes/game-list.csv", "roms/nes");
+    TURBOGRAFX("TURBOGRAFX 16", "roms/tg16/game-list.csv", "roms/tg16"), SEGA("SEGA MASTER SYSTEM", "roms/sega/game-list.csv", "roms/sega:"), NES("NINTENDO", "roms/nes/game-list.csv", "roms/nes");
 
     private String consoleName;
     private String gameList;

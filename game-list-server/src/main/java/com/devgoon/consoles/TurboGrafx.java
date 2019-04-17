@@ -13,11 +13,11 @@ import com.devgoon.games.GamesUtil;
 
 
 /**
- * Turbograpx implementation of the Console interface
+ * TurboGrafx implementation of the Console interface
  */
-public class TurboGrapx implements Console
+public class TurboGrafx implements Console
 {
-    private static final String CONSOLE_NAME = ConsoleType.TURBOGRAPX.getConsoleName();
+    private static final String CONSOLE_NAME = ConsoleType.TURBOGRAFX.getConsoleName();
 
     @Override
     public String getConsoleName()
@@ -31,7 +31,7 @@ public class TurboGrapx implements Console
         List<Game> result = new ArrayList<>();
         try
         {
-            result = new GamesUtil().loadGames(ConsoleType.TURBOGRAPX);
+            result = new GamesUtil().loadGames(ConsoleType.TURBOGRAFX);
         }
         catch (IOException | URISyntaxException e)
         {
