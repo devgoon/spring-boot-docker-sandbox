@@ -2,7 +2,7 @@
 ### 
 
 Consider this project as a template for using technologies like gradle, docker and SpringBoot.  
-Not meant to be a comprehensive, but a wide demonstration of commonly used frameworks.  I consider this my personal cookbook.
+It's not meant to be comprehensive, but a wide demonstration of commonly used frameworks.  I consider this my personal cookbook.
  
 ## Building
 
