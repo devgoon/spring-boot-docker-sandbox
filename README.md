@@ -20,7 +20,7 @@ From browser -> http://localhost:8080/turbografx/games
 ## Deployment
 
 Here are the notatable dependencies included with this Gradle build
-## Technology stack
+
 * Java
 * SpringBoot
 * Docker
