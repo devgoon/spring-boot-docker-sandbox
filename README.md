@@ -1,7 +1,7 @@
 # SpringBoot - Gradle - Docker
 ### 
 
-Consider this project as a template for using technologies like gradle, docker and SpringBoot.  
+Consider this project as a template for using technologies like Gradle, Docker and SpringBoot.  
 It's not meant to be comprehensive, but a wide demonstration of commonly used frameworks.  I consider this my personal cookbook.
  
 ## Building
